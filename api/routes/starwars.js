@@ -5,7 +5,7 @@ const uuid = require('uuid')
 const createStarwars = n => ({
   id: uuid.v4(),
   name: n,
-  value: n
+  value: prop(n, starwarsObj.all)
 })
 
 const starwars = map(createStarwars, keys(starwarsObj.all))
