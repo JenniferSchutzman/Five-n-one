@@ -5,10 +5,10 @@ const uuid = require('uuid')
 const createStarwars = n => ({
   id: uuid.v4(),
   name: n,
-  value: prop(n, starwarsObj)
+  value: n
 })
 
-const starwars = map(createStarwars, keys(starwarsObj))
+const starwars = map(createStarwars, keys(starwarsObj.all))
 
 module.exports = app => {
   app.get('/starwars', (req, res) => {
