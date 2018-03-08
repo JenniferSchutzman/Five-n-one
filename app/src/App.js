@@ -30,7 +30,7 @@ const Menu = props => {
     </div>
   )
 }
-
+/*  This BrowserRouter component gives you all of these paths with history */
 const App = props => {
   return (
     <BrowserRouter>
@@ -38,7 +38,7 @@ const App = props => {
         <Switch>
           <Route exact path="/" component={Menu} />
           <Route path="/colors" component={Colors} />
-          <Route path="/starswars" component={Starwars} />
+          <Route path="/starwars" component={Starwars} />
           <Route path="/emojis" component={Emojis} />
           <Route path="/fortune-cookies" component={Cookies} />
           <Route path="/buzzwords" component={Buzzwords} />

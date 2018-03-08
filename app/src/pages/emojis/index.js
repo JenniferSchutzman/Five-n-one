@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 const li = emoji => {
   return (
-    <li key={emoji.id} style={{ emoji: emoji.value }}>
+    <li key={emoji.id} style={{ emoji: emoji.name }}>
       {emoji.value}
     </li>
   )
@@ -15,13 +15,13 @@ const Emojis = props => {
   return (
     <div>
       <h1>Emojis</h1>
-      {map(li.props.emojis)}
+      <ul>{map(li, props.emojis)}</ul>
     </div>
   )
 }
 function mapStateToProps(state) {
   console.log('...and the state is...', state)
-  return { Emojis: state.Emojis }
+  return { emojis: state.emojis }
 }
 const connector = connect(mapStateToProps)
 

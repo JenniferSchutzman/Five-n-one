@@ -7,7 +7,7 @@ const url = 'http://localhost:5000/starwars'
 //   dispatch({ type: SET_STARWARS, payload: starwars })
 // }
 
-export const setStarWarsCharacters = (dispatch, setState) => {
-  const characters = fetch(url).then(res => res.json())
-  dispatch({ type: SET_STARWARS, payload: characters })
+export const setStarwars = async (dispatch, setState) => {
+  const starwars = await fetch(url).then(res => res.json())
+  dispatch({ type: SET_STARWARS, payload: starwars })
 }

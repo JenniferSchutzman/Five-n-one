@@ -7,24 +7,24 @@ const li = c => {
   return <li key={c.id}>{c.name}</li>
 }
 
-const StarWars = props => {
+const Starwars = props => {
   return (
     <div>
       <h1>Star Wars Character Names</h1>
-      {map(li, props.starwars)}
+      <ul>{map(li, props.starwars)}</ul>
     </div>
   )
 }
 function mapStateToProps(state) {
   console.log('...and the state is...', state)
-  return { starwars: state.starWarsCharacters }
+  return { starwars: state.starwars }
 }
 
 /* the mapStateToProps function is pulling state from the reducer
 in the other directory called starWarsCharacters*/
 
 const connector = connect(mapStateToProps)
-export default connector(StarWars)
+export default connector(Starwars)
 
 // class Starwars extends React.Component {
 //   constructor() {

@@ -15,13 +15,13 @@ const Cookies = props => {
   return (
     <div>
       <h1>Fortune Cookies</h1>
-      {map(li, props.cookies)}
+      <ul> {map(li, props.fortuneCookies)} </ul>
     </div>
   )
 }
 function mapStateToProps(state) {
   console.log('...and the state is...', state)
-  return { Cookies: state.Cookies }
+  return { fortuneCookies: state.fortuneCookies }
 }
 const connector = connect(mapStateToProps)
 

@@ -6,3 +6,5 @@ export const setBuzzwords = async (dispatch, setState) => {
   const buzzwords = await fetch(url).then(res => res.json())
   dispatch({ type: SET_BUZZWORDS, payload: buzzwords })
 }
+
+export default setBuzzwords
