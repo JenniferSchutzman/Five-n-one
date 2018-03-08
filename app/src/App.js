@@ -5,7 +5,7 @@ import Buzzwords from './pages/buzzwords'
 import Cookies from './pages/fortune-cookies'
 import Starwars from './pages/starwars'
 import Emojis from './pages/emojis'
-
+import { ColorForm } from './pages/colors/form'
 const Menu = props => {
   return (
     <div>
@@ -42,6 +42,7 @@ const App = props => {
           <Route path="/emojis" component={Emojis} />
           <Route path="/fortune-cookies" component={Cookies} />
           <Route path="/buzzwords" component={Buzzwords} />
+          <Route path="/colors/new" component={ColorForm} />
         </Switch>
       </div>
     </BrowserRouter>

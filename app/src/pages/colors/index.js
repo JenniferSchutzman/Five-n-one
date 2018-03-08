@@ -2,11 +2,15 @@ import React from 'react'
 //import fetch from 'isomorphic-fetch'
 import { map } from 'ramda'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+
+<Link to="/colors/new">Add New Color</Link>
 /*
 - FIRST GIVE IT A KEY TO INDENTIFY THIS NEW ITEM VS OTHER OLD ITEMS
 - CATEGORIZE THE COLOR VALUE AS STYLE OBJECT */
 /* THE DOUBLE {{}} ABOVE MEANS THAT IT'S JAVASCRIPT COMING IN AND AN
 OBJECT */
+
 const li = color => {
   return (
     <li key={color.id} style={{ color: color.value }}>
