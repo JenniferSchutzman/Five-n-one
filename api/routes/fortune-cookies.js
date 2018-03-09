@@ -1,5 +1,6 @@
 const cookieObj = require('fortune-cookie')
-const { map, keys, prop } = require('ramda')
+const fortuneCookies = require('fortune-cookie')
+const { map, keys, prop, append } = require('ramda')
 const uuid = require('uuid')
 // create color document
 /*  TAKES IN K AND RETURN AN OBJECT WITH 3 PROPS  */
@@ -12,9 +13,11 @@ const createCookie = c => ({
 - NEXT THE COLORS MAPS OVER THE ...... AND RETURN AN ARRAY OF THE PROPS
  */
 const fortune = map(createCookie, keys(cookieObj))
+
+var cookies = map(createCookie, fortuneCookies)
 /* */
 module.exports = app => {
   app.get('/fortune-cookies', (req, res) => {
-    res.send(fortune)
+    res.send(cookies)
   })
 }

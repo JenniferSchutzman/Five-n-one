@@ -5,7 +5,9 @@ import Buzzwords from './pages/buzzwords'
 import Cookies from './pages/fortune-cookies'
 import Starwars from './pages/starwars'
 import Emojis from './pages/emojis'
-import { ColorForm } from './pages/colors/form'
+import ColorForm from './pages/colors/form'
+import CookieForm from './pages/fortune-cookies/form'
+
 const Menu = props => {
   return (
     <div>
@@ -41,8 +43,17 @@ const App = props => {
           <Route path="/starwars" component={Starwars} />
           <Route path="/emojis" component={Emojis} />
           <Route path="/fortune-cookies" component={Cookies} />
+          <Route
+            path="/cookies/new"
+            render={props => <CookieForm {...props} formTitle="Add Cookie" />}
+          />
           <Route path="/buzzwords" component={Buzzwords} />
-          <Route path="/colors/new" component={ColorForm} />
+          <Route
+            path="/colors/new"
+            render={props => (
+              <ColorForm {...props} formTitle="add color here" />
+            )}
+          />}
         </Switch>
       </div>
     </BrowserRouter>

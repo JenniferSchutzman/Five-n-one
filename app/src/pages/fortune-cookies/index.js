@@ -2,6 +2,7 @@ import React from 'react'
 import fetch from 'isomorphic-fetch'
 import { map } from 'ramda'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const li = cookie => {
   return (
@@ -15,6 +16,7 @@ const Cookies = props => {
   return (
     <div>
       <h1>Fortune Cookies</h1>
+      <Link to="/cookies/new">Add New Cookie</Link>
       <ul> {map(li, props.fortuneCookies)} </ul>
     </div>
   )

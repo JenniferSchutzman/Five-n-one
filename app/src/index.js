@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import Tachyons from 'tachyons'
 import { Provider } from 'react-redux'
 import store from './store'
-import { setColors } from './action-creators/colors'
+import { setColors, addColor } from './action-creators/colors'
 import { setBuzzwords } from './action-creators/buzzwords'
 import { setStarwars } from './action-creators/starwars'
 import { setEmojis } from './action-creators/emojis'
@@ -22,3 +22,4 @@ store.dispatch(setStarwars)
 store.dispatch(setBuzzwords)
 store.dispatch(setEmojis)
 store.dispatch(setCookies)
+store.dispatch(addColor)

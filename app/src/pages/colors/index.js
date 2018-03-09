@@ -4,7 +4,6 @@ import { map } from 'ramda'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-<Link to="/colors/new">Add New Color</Link>
 /*
 - FIRST GIVE IT A KEY TO INDENTIFY THIS NEW ITEM VS OTHER OLD ITEMS
 - CATEGORIZE THE COLOR VALUE AS STYLE OBJECT */
@@ -14,7 +13,7 @@ OBJECT */
 const li = color => {
   return (
     <li key={color.id} style={{ color: color.value }}>
-      {color.name}
+      // <Link to={`/colors/${color.id}`}>{color.name}</Link>
     </li>
   )
 }
@@ -23,7 +22,8 @@ const Colors = props => {
   return (
     <div>
       <h1>Colors</h1>
-      {map(li, props.colors)}
+      <Link to="/colors/new">Add New Color</Link>
+      <ul>{map(li, props.colors)}</ul>
     </div>
   )
 }
@@ -35,6 +35,8 @@ const mapStateToProps = state => {
 const connector = connect(mapStateToProps)
 
 export default connector(Colors)
+
+/*  HERE WE ADD A LINK TO ADD A NEW COLOR */
 
 /*  MAKING IT A CLASS BECAUSE WE ARE TRACKING STATE WITHIN THE COMPONENT */
 /* fetch reaches out to the API like a get */
