@@ -22,13 +22,10 @@ module.exports = app => {
     res.send(buzzwords)
   })
   app.post('/buzzwords', bodyParser.json(), (req, res) => {
-    const newBuzzword = propOr(null, 'body', req)
-    if (newBuzzword) {
-      buzzwords = append(createBuzzword(newBuzzword.name), buzzwords)
-      res.send({ ok: true })
-    } else {
-      res.status(400).send({ ok: false })
-    }
+    buzzwords = append(
+      { id: uuid.v4(), name: req.body.name, value: req.body.value },
+      buzzwords
+    )
   })
   app.get('/buzzwords/:id', (req, res) => {
     res.send(find(b => b.id === req.params.id, buzzwords))

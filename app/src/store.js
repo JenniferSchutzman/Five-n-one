@@ -1,6 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import { colors, currentColor } from './reducers/colors'
+import {
+  colors,
+  currentColor,
+  currentViewEditColor,
+  showConfirmDeleteColor
+} from './reducers/colors'
 import {
   buzzwords,
   currentBuzzword,
@@ -20,7 +25,9 @@ export default createStore(
     emojis,
     fortuneCookies,
     currentBuzzword,
-    currentViewEditBuzzword
+    currentViewEditBuzzword,
+    currentViewEditColor,
+    showConfirmDeleteColor
   }),
   applyMiddleware(thunk)
 )

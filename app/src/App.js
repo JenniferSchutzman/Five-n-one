@@ -10,6 +10,9 @@ import CookieForm from './pages/fortune-cookies/form'
 import BuzzwordForm from './pages/buzzwords/form'
 import StarwarsForm from './pages/starwars/form'
 import ShowBuzzword from './pages/buzzwords/show'
+import ShowColor from './pages/colors/show'
+import EditColorForm from './pages/colors/edit'
+
 const Menu = props => {
   return (
     <div>
@@ -41,7 +44,10 @@ const App = props => {
       <div>
         <Switch>
           <Route exact path="/" component={Menu} />
-          <Route path="/colors" component={Colors} />
+          <Route exact path="/colors" component={Colors} />
+          <Route exact path="/colors/new" component={ColorForm} />
+          <Route exact path="/colors/:id" component={ShowColor} />
+          <Route path="/colors/:id/edit" component={EditColorForm} />
           <Route exact path="/starwars" component={Starwars} />
           <Route
             path="starwars/new"

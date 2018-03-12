@@ -15,8 +15,6 @@ export const setBuzzwords = async (dispatch, getState) => {
 
 export const getBuzzword = id => async (dispatch, getState) => {
   const buzzword = await fetch(`${url}/${id}`).then(res => res.json())
-
-  console.log('fetched buzzword', buzzword)
   dispatch({ type: CHG_CURRENT_VIEW_EDIT_BUZZWORD, payload: buzzword })
   console.log('in getBuzzword buzzword', buzzword)
   console.log('in getBuzzword dispatch', dispatch)
@@ -46,6 +44,7 @@ export const addBuzzword = (buzzword, history) => async (
       })
     })
   if (result.ok) {
+    dispatch({ type: CHG_CURRENT_BUZZWORD, payload: {} })
     dispatch(setBuzzwords)
     dispatch({ type: CLEAR_BUZZWORD_FORMDATA })
     history.push('/buzzwords')

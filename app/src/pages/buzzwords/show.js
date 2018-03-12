@@ -19,7 +19,7 @@ class ShowBuzzword extends React.Component {
     // }
     return (
       <div className="vh-100" style={{ backgroundColor: props.value }}>
-        <h1> {props.name} </h1>
+        <h1> {props.match.params.name} </h1>
         <Link to={`/buzzwords/${props.id}/edit`}>Edit</Link>
         <button onClick={e => props.removeBuzzword(props.id, props.history)}>
           Remove
