@@ -9,6 +9,7 @@ import ColorForm from './pages/colors/form'
 import CookieForm from './pages/fortune-cookies/form'
 import BuzzwordForm from './pages/buzzwords/form'
 import StarwarsForm from './pages/starwars/form'
+import ShowBuzzword from './pages/buzzwords/show'
 const Menu = props => {
   return (
     <div>
@@ -64,6 +65,7 @@ const App = props => {
               <BuzzwordForm {...props} formTitle="Add Buzzword" />
             )}
           />
+          <Route path="/buzzwords/:id" component={ShowBuzzword} />
           <Route
             path="/colors/new"
             render={props => (

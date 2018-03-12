@@ -5,7 +5,11 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const li = buzzword => {
-  return <li key={buzzword.id}>{buzzword.name}</li>
+  return (
+    <li key={buzzword.id} style={{ buzzword: buzzword.name }}>
+      <Link to={`/buzzwords/${buzzword.id}`}>{buzzword.name}</Link>
+    </li>
+  )
 }
 
 const Buzzwords = props => {

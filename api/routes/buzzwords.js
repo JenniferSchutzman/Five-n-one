@@ -1,5 +1,5 @@
 const buzzObj = require('buzzwords')
-const { map, keys, prop, propOr, append } = require('ramda')
+const { map, keys, prop, propOr, append, find } = require('ramda')
 const uuid = require('uuid')
 const bodyParser = require('body-parser')
 
@@ -30,4 +30,17 @@ module.exports = app => {
       res.status(400).send({ ok: false })
     }
   })
+  app.get('/buzzwords/:id', (req, res) => {
+    res.send(find(b => b.id === req.params.id, buzzwords))
+  })
 }
+
+// app.post('/buzzwords', bodyParser.json(), (req, res) => {
+//   const newBuzzword = propOr(null, 'body', req)
+//   if (newBuzzword) {
+//     buzzwords = append(createBuzzword(newBuzzword.name), buzzwords)
+//     res.send({ ok: true })
+//   } else {
+//     res.status(400).send({ ok: false })
+//   }
+// })

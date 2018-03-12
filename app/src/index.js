@@ -4,7 +4,11 @@ import Tachyons from 'tachyons'
 import { Provider } from 'react-redux'
 import store from './store'
 import { setColors, addColor } from './action-creators/colors'
-import { setBuzzwords, addBuzzword } from './action-creators/buzzwords'
+import {
+  setBuzzwords,
+  addBuzzword,
+  getBuzzword
+} from './action-creators/buzzwords'
 import { setStarwars, addStarwarsCharacter } from './action-creators/starwars'
 import { setEmojis } from './action-creators/emojis'
 import { setCookies } from './action-creators/fortune-cookies'
@@ -25,4 +29,4 @@ store.dispatch(setCookies)
 store.dispatch(addColor)
 store.dispatch(addBuzzword)
 store.dispatch(addStarwarsCharacter)
-store.dispatch(addBuzzword)
+store.dispatch(getBuzzword)

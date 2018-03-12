@@ -1,7 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { colors, currentColor } from './reducers/colors'
-import { buzzwords, currentBuzzword } from './reducers/buzzwords'
+import {
+  buzzwords,
+  currentBuzzword,
+  currentViewEditBuzzword
+} from './reducers/buzzwords'
 import { starwars, currentStarwarsCharacter } from './reducers/starwars'
 import { emojis } from './reducers/emojis'
 import { fortuneCookies, currentCookie } from './reducers/fortune-cookies'
@@ -15,7 +19,8 @@ export default createStore(
     currentStarwarsCharacter,
     emojis,
     fortuneCookies,
-    currentBuzzword
+    currentBuzzword,
+    currentViewEditBuzzword
   }),
   applyMiddleware(thunk)
 )

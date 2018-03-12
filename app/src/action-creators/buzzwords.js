@@ -3,13 +3,23 @@ import {
   SET_BUZZWORDS,
   SET_ERROR_MSG,
   CHG_CURRENT_BUZZWORD,
-  CLEAR_BUZZWORD_FORMDATA
+  CLEAR_BUZZWORD_FORMDATA,
+  CHG_CURRENT_VIEW_EDIT_BUZZWORD
 } from '../constants'
 const url = 'http://localhost:5000/buzzwords'
 
 export const setBuzzwords = async (dispatch, getState) => {
   const buzzwords = await fetch(url).then(res => res.json())
   dispatch({ type: SET_BUZZWORDS, payload: buzzwords })
+}
+
+export const getBuzzword = id => async (dispatch, getState) => {
+  const buzzword = await fetch(`${url}/${id}`).then(res => res.json())
+
+  console.log('fetched buzzword', buzzword)
+  dispatch({ type: CHG_CURRENT_VIEW_EDIT_BUZZWORD, payload: buzzword })
+  console.log('in getBuzzword buzzword', buzzword)
+  console.log('in getBuzzword dispatch', dispatch)
 }
 
 export const addBuzzword = (buzzword, history) => async (
