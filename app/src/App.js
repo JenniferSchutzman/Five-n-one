@@ -7,7 +7,8 @@ import Starwars from './pages/starwars'
 import Emojis from './pages/emojis'
 import ColorForm from './pages/colors/form'
 import CookieForm from './pages/fortune-cookies/form'
-
+import BuzzwordForm from './pages/buzzwords/form'
+import StarwarsForm from './pages/starwars/form'
 const Menu = props => {
   return (
     <div>
@@ -40,14 +41,29 @@ const App = props => {
         <Switch>
           <Route exact path="/" component={Menu} />
           <Route path="/colors" component={Colors} />
-          <Route path="/starwars" component={Starwars} />
+          <Route exact path="/starwars" component={Starwars} />
+          <Route
+            path="starwars/new"
+            render={props => (
+              <StarwarsForm
+                {...props}
+                formTitle="Add Characters to starwars list"
+              />
+            )}
+          />
           <Route path="/emojis" component={Emojis} />
-          <Route path="/fortune-cookies" component={Cookies} />
+          <Route exact path="/fortune-cookies" component={Cookies} />
           <Route
             path="/cookies/new"
             render={props => <CookieForm {...props} formTitle="Add Cookie" />}
           />
-          <Route path="/buzzwords" component={Buzzwords} />
+          <Route exact path="/buzzwords" component={Buzzwords} />
+          <Route
+            path="/buzzwords/new"
+            render={props => (
+              <BuzzwordForm {...props} formTitle="Add Buzzword" />
+            )}
+          />
           <Route
             path="/colors/new"
             render={props => (

@@ -22,7 +22,7 @@ const Form = ({
   ) : null
 
   return (
-    <form on Submit={onSubmit({ id, name, value })}>
+    <form onSubmit={onSubmit({ id, name, value })}>
       <div>
         <label className="dib">id</label>
         <div>{id}</div>

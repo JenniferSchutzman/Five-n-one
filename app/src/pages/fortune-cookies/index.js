@@ -5,11 +5,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const li = cookie => {
-  return (
-    <li key={cookie.id} style={{ cookie: cookie.value }}>
-      {cookie.value}
-    </li>
-  )
+  return <li key={cookie.id}>{cookie.name}}</li>
 }
 
 const Cookies = props => {

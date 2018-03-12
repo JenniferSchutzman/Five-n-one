@@ -5,11 +5,11 @@ const starwarsRoutes = require('./routes/starwars')
 const buzzwordRoutes = require('./routes/buzzwords')
 const cookieRoutes = require('./routes/fortune-cookies')
 const emojiRoutes = require('./routes/emojis')
-
+const bodyParser = require('body-parser')
 const app = express()
 
 app.use(cors({ credentials: true }))
-
+app.use(bodyParser.json())
 // load routes here
 colorRoutes(app)
 starwarsRoutes(app)

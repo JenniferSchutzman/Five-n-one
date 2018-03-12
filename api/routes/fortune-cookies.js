@@ -7,12 +7,13 @@ const uuid = require('uuid')
 const createCookie = c => ({
   id: uuid.v4(),
   name: c,
-  value: prop(c, cookieObj)
+  value: null
 })
+
 /*
 - NEXT THE COLORS MAPS OVER THE ...... AND RETURN AN ARRAY OF THE PROPS
  */
-const fortune = map(createCookie, keys(cookieObj))
+const fortune = map(createCookie, cookieObj)
 
 var cookies = map(createCookie, fortuneCookies)
 /* */

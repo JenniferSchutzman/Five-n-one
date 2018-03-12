@@ -11,7 +11,7 @@ const createColor = k => ({
 /*
 - NEXT THE COLORS MAPS OVER THE ...... AND RETURN AN ARRAY OF THE PROPS
  */
-const colors = map(createColor, keys(csscolorsObj))
+var colors = map(createColor, keys(csscolorsObj))
 /* */
 module.exports = app => {
   app.get('/colors', (req, res) => {

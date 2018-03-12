@@ -2,6 +2,7 @@ import React from 'react'
 //import fetch from 'isomorphic-fetch'
 import { map } from 'ramda'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const li = c => {
   return <li key={c.id}>{c.name}</li>
@@ -11,13 +12,14 @@ const Starwars = props => {
   return (
     <div>
       <h1>Star Wars Character Names</h1>
+      <Link to="starwars/new">Add Character</Link>
       <ul>{map(li, props.starwars)}</ul>
     </div>
   )
 }
 function mapStateToProps(state) {
   console.log('...and the state is...', state)
-  return { starwars: state.starwars }
+  return { Starwars: state.starwars }
 }
 
 /* the mapStateToProps function is pulling state from the reducer
